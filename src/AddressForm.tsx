@@ -2,6 +2,7 @@ import { FormWrapper } from "./FormWrapper"
 
 type AddressData = {
   street: string
+  street2: string
   city: string
   state: string
   zip: string
@@ -12,7 +13,8 @@ type AddressFormProps = AddressData & {
 }
 
 export function AddressForm({
-  street,
+  street,   
+  street2,
   city,
   state,
   zip,
@@ -27,6 +29,14 @@ export function AddressForm({
         type="text"
         value={street}
         onChange={e => updateFields({ street: e.target.value })}
+      />
+      <label>Street 2</label>
+      <input
+        autoFocus
+        required
+        type="text"
+        value={street2}
+        onChange={e => updateFields({ street2: e.target.value })}
       />
       <label>City</label>
       <input
